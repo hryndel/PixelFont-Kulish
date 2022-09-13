@@ -10,8 +10,7 @@ namespace PixelFont_Kulish
     {
         public void Nums(int length, char[] number)
         {
-            char[] mas;
-            char[,] mas2;
+            char[,] mas = null;
             int i;
             int j;
             var x = (Console.WindowWidth - length * 4) / 2;
@@ -26,172 +25,56 @@ namespace PixelFont_Kulish
                         x += 1;
                         break;
                     case '-':
-                        mas = new char[3] { '█', '█', '█' };
-                        Console.SetCursorPosition(x, y-3);
-                        for (j = 0; j < 3; j++)
-                        {
-                            Console.Write(mas[j]);
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7,3] { { '█', '█', '█' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
                         break;
-
                     case '.':
-                        mas = new char[3] { '█', ' ', ' ' };
-                        Console.SetCursorPosition(x, y);
-                        for (j = 0; j < 3; j++)
-                        {
-                            Console.Write(mas[j]);
-                        }
-                        Array.Clear(mas);
-                        y = yf;
-                        x += 4;
+                        mas = new char[7, 3] { { '█', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
                         break;
-
                     case ',':
-                        mas2 = new char[2, 3] { { ' ', '█', ' ' }, { '█', ' ', ' ' } };
-                        for (i = 0; i < 2; i++)
-                        {
-                            Console.SetCursorPosition(x, y++);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i,j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { '█', ' ', ' ' }, { ' ', '█', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
+                        y++;
                         break;
                     case '0':
-                        mas2 = new char[7, 3] { { ' ', '█', ' ' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { ' ', '█', ' ' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { ' ', '█', ' ' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { ' ', '█', ' ' } };
                         break;
                     case '1':
-                        mas2 = new char[7, 3] { { '█', '█', '█' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { '█', '█', ' ' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { '█', '█', '█' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { '█', '█', ' ' } };
                         break;
                     case '2':
-                        mas2 = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', ' ' }, { '█', ' ', ' ' }, { '█', '█', '█' }, { ' ', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', ' ' }, { '█', ' ', ' ' }, { '█', '█', '█' }, { ' ', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' } };
                         break;
                     case '3':
-                        mas2 = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', '█' }, { ' ', ' ', '█' }, { ' ', '█', ' ' }, { ' ', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4; 
-                        y = yf;
+                        mas = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', '█' }, { ' ', ' ', '█' }, { ' ', '█', ' ' }, { ' ', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' } };
                         break;
                     case '4':
-                        mas2 = new char[7, 3] { { ' ', ' ', '█' }, { ' ', ' ', '█' }, { ' ', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { ' ', ' ', '█' }, { ' ', ' ', '█' }, { ' ', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' } };
                         break;
                     case '5':
-                        mas2 = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', '█' }, { ' ', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', ' ' }, { '█', ' ', ' ' }, { '█', '█', '█' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', '█' }, { ' ', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', ' ' }, { '█', ' ', ' ' }, { '█', '█', '█' } };
                         break;
                     case '6':
-                        mas2 = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', ' ' }, { '█', ' ', ' ' }, { ' ', '█', ' ' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', ' ' }, { '█', ' ', ' ' }, { ' ', '█', ' ' } };
                         break;
                     case '7':
-                        mas2 = new char[7, 3] { { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', ' ', '█' }, { ' ', ' ', '█' }, { ' ', ' ', '█' }, { '█', '█', '█' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', '█', ' ' }, { ' ', ' ', '█' }, { ' ', ' ', '█' }, { ' ', ' ', '█' }, { '█', '█', '█' } };
                         break;
                     case '8':
-                        mas2 = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' } };
                         break;
                     case '9':
-                        mas2 = new char[7, 3] { { ' ', '█', ' ' }, { ' ', ' ', '█' }, { ' ', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' } };
-                        for (i = 0; i < 7; i++)
-                        {
-                            Console.SetCursorPosition(x, y--);
-                            for (j = 0; j < 3; j++)
-                            {
-                                Console.Write(mas2[i, j]);
-                            }
-                        }
-                        x += 4;
-                        y = yf;
+                        mas = new char[7, 3] { { ' ', '█', ' ' }, { ' ', ' ', '█' }, { ' ', ' ', '█' }, { '█', '█', '█' }, { '█', ' ', '█' }, { '█', ' ', '█' }, { '█', '█', '█' } };
                         break;
                 }
+                for (i = 0; i < 7; i++)
+                {
+                    Console.SetCursorPosition(x, y--);
+                    for (j = 0; j < 3; j++)
+                    {
+                        Console.Write(mas[i, j]);
+                    }
+                }
+                x += 4;
+                y = yf;
                 Console.SetCursorPosition(x, y);
             }
         }
