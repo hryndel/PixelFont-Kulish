@@ -37,6 +37,7 @@ namespace PixelFont_Kulish
             Draw dr = new();
             dr.Nums(length, number);
             Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
