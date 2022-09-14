@@ -29,13 +29,20 @@ namespace PixelFont_Kulish
                     break;
                 }
             }
-            char[] number = str.ToCharArray();
-            foreach (char c in number)
+            if (str != null)
             {
-                length++;
+                char[] number = str.ToCharArray();
+                foreach (char c in number)
+                {
+                    length++;
+                }
+                Draw dr = new();
+                dr.Nums(length, number);
             }
-            Draw dr = new();
-            dr.Nums(length, number);
+            else
+            {
+                Console.WriteLine("Вы ничего не ввели.");
+            }
             Console.ReadKey();
         }
     }
